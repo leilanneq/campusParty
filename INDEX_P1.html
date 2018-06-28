@@ -1,0 +1,168 @@
+<!-- Leilanne Tavares - RA21751248 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style type="text/css">
+    h1 {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 18pt;
+      color: green;
+      text-align: center;
+    }
+    #busca {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-right: 150px;
+      margin-left: 80px;
+    }
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #topo-tabela {
+      background-color: rgb(197, 192, 192);
+    }
+    #linha-cinza-1{
+      background-color:  rgba(247, 242, 242, 0.952);
+    }
+    #linha-cinza-2{
+      background-color: rgba(247, 242, 242, 0.952);
+    }
+    #produto-final{
+      font-weight:bold;
+    }
+
+    h3 {
+      font-family: Arial;
+      color: gray;
+      text-align: left;
+      font-size: 14pt;
+
+    }
+  </style>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="ESTILO_P1.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <title>Lista de Itens do Pedido</title>
+</head>
+
+<body>
+  <!-- JavaScript (Opcional) -->
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="sugestões.js"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pedido</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="INDEX_P1.html">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <h1>LISTA: Itens do Pedido</h1>
+  <div class="container-fluid">
+    <form method="post" action="pagina_de_resultados.html" id="busca">
+      <label for="formGroupExampleInput2"> Busca:</label>
+      <input type="text" name="q" value="Digite descrição...">
+    </form>
+    <div style="overflow-x:auto;">
+      <table style="width:100%">
+        <tr id="topo-tabela">
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th>Total do item</th>
+          <th>...</th>
+        </tr>
+        <tr>
+          <td id="parafuso">Parafuso grande</td>
+          <td id="qnt-parafuso">2</td>
+          <td id="valor-parafuso">$10.00</td>
+          <td id="total-parafuso">$20.00</td>
+          <td>
+            <i class="material-icons"> delete</i>
+          </td>
+        </tr>
+        <tr id="linha-cinza-1">
+          <td class="info-produto">Ruela de 1/2</td>
+          <td class="info-preco">10</td>
+          <td class="info-quantidade">$1.00</td>
+          <td class="info-total">$10.00</td>
+          <td>
+            <i class="material-icons"> delete</i>
+          </td>
+        </tr>
+        <tr>
+          <td class="info-produto">Tampão de aço</td>
+          <td class="info-preco">1</td>
+          <td class="info-quantidade">$100.00</td>
+          <td class="info-total">$100.00</td>
+          <td>
+            <i class="material-icons"> delete</i>
+          </td>
+        </tr>
+        <tr id="linha-cinza-2">
+          <td class="info-produto">Vedação de junta</td>
+          <td class="info-preco">5</td>
+          <td class="info-quantidade">$2.00</td>
+          <td class="info-total">$10.00</td>
+          <td>
+            <i class="material-icons"> delete</i>
+          </td>
+        </tr>
+        <tr>
+          <td class="info-produto" id="produto-final">Total de Itens do Pedido:</td>
+          <td class="info-total">..</td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <br>
+    <h3>FORMULÁRIO: Digite os dados do item de pedido a ser incluído:</h3>
+    <br>
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Descrição</label>
+        <input type="text" class="form-control" id="produtoNovo" placeholder="Digite a descrição">
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="formGroupExampleInput"> Quantidade:</label>
+          <input type="text" class="form-control" id="precoNovo" placeholder="Digite a quantidade">
+        </div>
+        <div class="col">
+          <label for="formGroupExampleInput"> Preço:</label>
+          <input type="text" class="form-control" id="qntNova" placeholder="Digite o preço">
+        </div>
+      </div>
+    </form>
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Incluir item para o pedido</button>
+  </div>
+</body>
+
+</html>
